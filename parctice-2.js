@@ -63,3 +63,18 @@ function totalCost(amount){
 }
 
 totalCost(1200);
+
+// ========================================
+// check the leap year
+
+function isLeapYear(year){
+    if((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0){
+        console.log(year, 'this year is leap year')
+    }
+    else{
+        console.log(year, 'this year is not a leap year')
+    }
+}
+
+isLeapYear(2024);
+// ======================================
