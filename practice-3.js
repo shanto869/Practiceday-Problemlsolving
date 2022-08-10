@@ -32,28 +32,6 @@ rectangleArea(5, 8);
 // =========================================
 // check the number is prime or not
 
-// function isPrime(number){
-//     if(number < 1){
-//         console.log(`${number} is not a Prime Number`);
-//     }
-//     else if(number === 1){
-//         console.log(`${number} is neither prime nor composite number`);
-//     }
-//     else{
-//         for(let i = 2; i < number; i++){
-//             if(number % i === 0){
-//                 var result = (`${number} is not a prime number`);
-//                 break;
-//             }
-//             else{
-//                 var result = (`${number} is a prime number`)
-//             }
-//         }
-//         console.log(result);
-//     }
-// }
-
-// isPrime(29)
 function isPrime(num){
     if(num < 1){
         return `${num} this number is not a prime number`;

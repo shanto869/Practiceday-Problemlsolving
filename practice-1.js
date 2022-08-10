@@ -32,46 +32,7 @@ function paperRequirements(firstBookQuantity, secondBookQuantity, thirdBookQuant
 }
 
 paperRequirements(2, 2, 2);
-// ===========================================
 
-// return a learge length of string from an array
-
-function bestFriend(arr){
-    let largeName = arr[0];
-
-    for(let i = 0; i < arr.length; i++){
-        const friend = arr[i]
-
-        if(largeName.length < friend.length){
-            largeName = friend;
-        }
-    }
-    console.log(largeName)
-}
-
-const friends = ['Sakib', 'Tamim', 'Mushfikur', 'Mashrafee', 'Shanto Biswas', 'Liton Das'];
-bestFriend(friends);
-// =====================================
-
-// find out the positive numbers form an array
-
-function findPositive(numArr){
-    let newArr = [];
-
-    for(let i = 0; i < numArr.length; i++){
-        const number = numArr[i];
-        if(number < 0){
-            break;
-        }
-        else{
-            newArr.push(number)
-        }
-    }
-    console.log('Positive Numbers Array is:', newArr)
-}
-
-const numbers = [2, 4, 1, 9, 20, -4, 2, -5, 0 , 2, 5, 8, -2, -8];
-const positiveNum = findPositive(numbers);
 // ==========================================
 
 // check odd or even number 
@@ -107,3 +68,38 @@ function largestNumber(num1, num2, num3){
 largestNumber(4, 9, 20);
 
 // ========================================
+
+// calculate ElectricityBill 
+// 01. first 100 ----> 5 tk.            // 02. first 100 ----> 5 tk, second 100 ---> 6 tk.  
+// 03. first 100 -----> 5 tk,  second 100 ----> 6 tk, 200+ ------> 7 tk.  
+     
+function electricityBill(unit){
+    let bill;
+    const first100Unit = 5;
+    const second100Unit = 6;
+    const restUnitRate = 7;
+
+    if(unit <= 100){
+        bill = unit * first100Unit;
+    }
+    else if(unit <= 200){
+        const first100 = 100 * first100Unit;
+        const remaining = unit - 100;
+        const remainingCost = remaining * second100Unit;
+        bill = first100 + remainingCost;
+    }
+    else{
+        const first100 = 100 * first100Unit;
+        const second100 = 100 * second100Unit;
+        const remaining = unit - 200;
+        const remainingCost = remaining * restUnitRate;
+        bill = first100 + second100 + remainingCost;
+    }
+    return bill;
+ }   
+
+ const totalCost = electricityBill(400);
+ console.log(totalCost);
+
+
+
